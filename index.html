@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Creative- Agencia Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Express Creative</div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')">Inicio</a></li>
+                <li><a onclick="showPage('services')">Servicios</a></li>
+                <li><a onclick="showPage('streaming')">Streaming</a></li>
+                <li><a onclick="showPage('calculator')">Calculadora</a></li>
+                <li><a onclick="showPage('pricing')">Precios</a></li>
+                <li><a onclick="showPage('contact')">Contacto</a></li>
+            </ul>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <div class="mobile-menu">
+                <ul>
+                    <li><a onclick="showPage('home')">Inicio</a></li>
+                    <li><a onclick="showPage('services')">Servicios</a></li>
+                    <li><a onclick="showPage('streaming')">Streaming</a></li>
+                    <li><a onclick="showPage('calculator')">Calculadora</a></li>
+                    <li><a onclick="showPage('pricing')">Precios</a></li>
+                    <li><a onclick="showPage('contact')">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <div class="container">
+            <section class="hero fade-in">
+                <h1>Impulsa tu Contenido Digital</h1>
+                <p>Especialistas en ayudar a nuevos creadores de contenido a crecer con estrategias, métricas y transmisiones en vivo efectivas</p>
+                <a href="#" class="cta-button" onclick="showPage('services')">Descubre Nuestros Servicios</a>
+            </section>
+
+            <section class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">📊</div>
+                    <h3>Análisis de Métricas</h3>
+                    <p>Te ayudamos a entender y optimizar tus métricas de engagement, alcance y conversión para maximizar tu crecimiento.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">📹</div>
+                    <h3>Transmisiones en Vivo</h3>
+                    <p>Estrategias probadas para transmisiones exitosas que conecten con tu audiencia y generen engagement auténtico.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎨</div>
+                    <h3>Branding & Diseño</h3>
+                    <p>Creamos identidades visuales impactantes, desde logos hasta contenido gráfico que destaque en redes sociales.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services" class="page">
+        <div class="container">
+            <section class="hero">
+                <h1>Nuestros Servicios</h1>
+                <p>Soluciones completas para creadores de contenido digital</p>
+            </section>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Contenido para Redes Sociales</h3>
+                    <p>Creación de contenido visual y estratégico para Instagram, TikTok, YouTube y otras plataformas. Incluye posts, stories, reels y contenido viral.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Estrategia de contenido mensual</li>
+                        <li>Diseño gráfico personalizado</li>
+                        <li>Copywriting optimizado</li>
+                        <li>Calendario de publicaciones</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎥</div>
+                    <h3>Producción Audiovisual</h3>
+                    <p>Cobertura fotográfica y de video profesional. Desde contenido para redes hasta producciones más elaboradas.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Fotografía de producto y lifestyle</li>
+                        <li>Videos promocionales</li>
+                        <li>Edición profesional</li>
+                        <li>Motion graphics</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Sitios web optimizados para creadores, desde páginas de destino hasta tiendas online y portfolios profesionales.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Diseño responsive</li>
+                        <li>Optimización SEO</li>
+                        <li>Integración con redes sociales</li>
+                        <li>Analytics y seguimiento</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Branding Completo</h3>
+                    <p>Desarrollo de identidad de marca desde cero, incluyendo logo, paleta de colores, tipografías y manual de marca.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Diseño de logo profesional</li>
+                        <li>Manual de identidad corporativa</li>
+                        <li>Aplicaciones de marca</li>
+                        <li>Templates personalizados</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Estrategia Digital</h3>
+                    <p>Consultoría especializada en crecimiento digital, análisis de competencia y optimización de estrategias.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Auditoría de redes sociales</li>
+                        <li>Plan de crecimiento personalizado</li>
+                        <li>Análisis de competencia</li>
+                        <li>Workshops y formación</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎙️</div>
+                    <h3>Gestión de Influencers</h3>
+                    <p>Servicios completos de management para influencers y creadores de contenido en crecimiento.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Negociación de contratos</li>
+                        <li>Gestión de colaboraciones</li>
+                        <li>Planificación de campañas</li>
+                        <li>Análisis de performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STREAMING PAGE -->
+    <div id="streaming" class="page">
+        <div class="container">
+            <section class="hero">
+                <h1>Transmisiones en Vivo</h1>
+                <p>Maximiza el potencial de tus streams con nuestras estrategias probadas</p>
+            </section>
+
+            <div class="live-stream-demo">
+                <h3>🔴 Optimización de Transmisiones en Vivo</h3>
+                <p>Las transmisiones en vivo son una herramienta poderosa para conectar con tu audiencia en tiempo real. Te ayudamos a:</p>
+                
+                <div class="services-grid" style="margin-top: 2rem;">
+                    <div class="service-card">
+                        <h4>📅 Planificación Estratégica</h4>
+                        <p>Definimos horarios óptimos, temáticas atractivas y calendario de contenido para maximizar la asistencia.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>🎯 Engagement en Tiempo Real</h4>
+                        <p>Técnicas para mantener a tu audiencia activa: juegos, Q&A, sorteos y dinámicas interactivas.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>⚙️ Setup Técnico</h4>
+                        <p>Configuración profesional de audio, video, iluminación y software para streams de calidad.</p>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 2rem; color: #667eea;">Métricas Clave para Streams Exitosos:</h4>
+                <div class="stream-metrics">
+                    <div class="metric-card">
+                        <span class="metric-number">85%</span>
+                        <span>Retención Promedio</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">300+</span>
+                        <span>Viewers Concurrentes</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">12min</span>
+                        <span>Tiempo Promedio</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">45%</span>
+                        <span>Nuevos Seguidores</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="live-stream-demo">
+                <h3>🎮 Plataformas que Manejamos</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h4>🔴 YouTube Live</h4>
+                        <p>Optimización para el algoritmo de YouTube, integración con tu canal y maximización del alcance orgánico.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>📷 Instagram Live</h4>
+                        <p>Estrategias para Stories y Lives de Instagram, aprovechando las notificaciones push y el engagement inmediato.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>🎵 TikTok Live</h4>
+                        <p>Aprovecha el algoritmo de TikTok para lives virales con contenido trending y dinámicas juveniles.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>🟣 Twitch</h4>
+                        <p>Construcción de comunidad en Twitch, monetización efectiva y crecimiento sostenido de subscribers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALCULATOR PAGE -->
+<div id="calculator" class="page">
+  <div class="container">
+    <section class="hero">
+      <h1>Calculadora de Métricas Publicitarias</h1>
+      <p>Si ejecutas campañas en diferentes plataformas, evalúa cada una por separado.</p>
+    </section>
+
+    <div class="calculator">
+      <h3>Calculadora de Métricas Publicitarias</h3>
+      <div class="calc-form">
+        <label for="total-cost"><strong>Coste total (USD):</strong></label>
+        <input type="number" id="total-cost" class="calc-input" placeholder="Ej. 150.00" step="0.01">
+
+        <label for="impressions"><strong>Impresiones:</strong></label>
+        <input type="number" id="impressions" class="calc-input" placeholder="Ej. 25000">
+
+        <label for="clicks"><strong>Clics:</strong></label>
+        <input type="number" id="clicks" class="calc-input" placeholder="Ej. 320">
+
+        <label for="conversions"><strong>Conversiones/Acciones:</strong></label>
+        <input type="number" id="conversions" class="calc-input" placeholder="Ej. 25">
+
+        <label for="revenue"><strong>Ingresos/Ganancias (USD):</strong></label>
+        <input type="number" id="revenue" class="calc-input" placeholder="Ej. 1200.00" step="0.01">
+
+        <button class="calc-button" onclick="calculateAdMetrics()">Calcular métricas</button>
+      </div>
+      <div id="ad-metrics-result" class="calc-results"></div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- PRICING PAGE -->
+    <div id="pricing" class="page">
+        <div class="container">
+            <section class="hero">
+                <h1>Planes y Precios</h1>
+                <p>Elige el plan perfecto para impulsar tu crecimiento digital</p>
+            </section>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$299<span class="price-period">/mes</span></div>
+                    <ul class="features-list">
+                        <li>Análisis básico de métricas</li>
+                        <li>5 posts para redes sociales</li>
+                        <li>1 sesión de consultoría</li>
+                        <li>Reporte mensual básico</li>
+                        <li>Soporte por email</li>
+                    </ul>
+                    <a href="#" class="cta-button" onclick="showPage('contact')">Comenzar</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Pro Creator</h3>
+                    <div class="price">$599<span class="price-period">/mes</span></div>
+                    <ul class="features-list">
+                        <li>Análisis completo de métricas</li>
+                        <li>15 posts diseñados</li>
+                        <li>2 videos/reels mensuales</li>
+                        <li>Estrategia de streaming</li>
+                        <li>3 sesiones de consultoría</li>
+                        <li>Soporte prioritario</li>
+                        <li>Setup técnico básico</li>
+                    </ul>
+                    <a href="#" class="cta-button" onclick="showPage('contact')">Más Popular</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$1,199<span class="price-period">/mes</span></div>
+                    <ul class="features-list">
+                        <li>Todo lo del plan Pro</li>
+                        <li>Contenido ilimitado</li>
+                        <li>Branding completo</li>
+                        <li>Desarrollo web básico</li>
+                        <li>Management personalizado</li>
+                        <li>Consultoría semanal</li>
+                        <li>Soporte 24/7</li>
+                        <li>ROI garantizado</li>
+                    </ul>
+                    <a href="#" class="cta-button" onclick="showPage('contact')">Contactar</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; color: rgb(0, 0, 0);">
+                <h3>🎯 Servicios Adicionales</h3>
+                <div class="services-grid" style="margin-top: 2rem;">
+                    <div class="service-card">
+                        <h4>🎨 Diseño de Logo</h4>
+                        <p><strong>$199 - $499</strong></p>
+                        <p>Logo profesional con variaciones y manual de uso</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>💻 Página Web</h4>
+                        <p><strong>$799 - $2,499</strong></p>
+                        <p>Sitio web responsive con integración de redes sociales</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>📹 Producción de Video</h4>
+                        <p><strong>$299 - $1,199</strong></p>
+                        <p>Video promocional profesional con edición incluida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div class="container">
+            <section class="hero">
+                <h1>Contacto</h1>
+                <p>¿Listo para impulsar tu contenido digital? ¡Hablemos!</p>
+            </section>
+
+            <div class="contact-form">
+                <h3 style="text-align: center; color: #667eea; margin-bottom: 2rem;">Solicita tu Consulta Gratuita</h3>
+                
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="platform">Plataforma Principal</label>
+                        <select id="platform" name="platform">
+                            <option value="">Selecciona tu plataforma</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="twitch">Twitch</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="twitter">Twitter/X</option>
+                            <option value="multiple">Múltiples plataformas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="followers">Número de Seguidores</label>
+                        <select id="followers" name="followers">
+                            <option value="">Selecciona tu rango</option>
+                            <option value="0-1k">0 - 1,000</option>
+                            <option value="1k-10k">1,000 - 10,000</option>
+                            <option value="10k-50k">10,000 - 50,000</option>
+                            <option value="50k-100k">50,000 - 100,000</option>
+                            <option value="100k+">Más de 100,000</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Servicio de Interés</label>
+                        <select id="service" name="service">
+                            <option value="">¿Qué necesitas?</option>
+                            <option value="metrics">Análisis de Métricas</option>
+                            <option value="streaming">Optimización de Streams</option>
+                            <option value="content">Creación de Contenido</option>
+                            <option value="branding">Branding y Diseño</option>
+                            <option value="web">Desarrollo Web</option>
+                            <option value="management">Management Completo</option>
+                            <option value="consulting">Consultoría Estratégica</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Presupuesto Mensual</label>
+                        <select id="budget" name="budget">
+                            <option value="">Selecciona tu presupuesto</option>
+                            <option value="under-300">Menos de $300</option>
+                            <option value="300-600">$300 - $600</option>
+                            <option value="600-1200">$600 - $1,200</option>
+                            <option value="1200+">Más de $1,200</option>
+                            <option value="custom">Presupuesto personalizado</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Cuéntanos sobre tu proyecto</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Describe tus objetivos, desafíos actuales y qué esperas lograr con nuestros servicios..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="cta-button" style="width: 100%;">Solicitar Consulta Gratuita</button>
+                    </div>
+                </form>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; color: rgb(0, 0, 0);">
+                <h3>📞 Otras Formas de Contacto</h3>
+                <div class="services-grid" style="margin-top: 2rem;">
+                    <div class="service-card">
+                        <div class="service-icon">📧</div>
+                        <h4>Email</h4>
+                        <p>hola@creatorboost.com</p>
+                        <p>Respuesta en menos de 24h</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💬</div>
+                        <h4>WhatsApp</h4>
+                        <p>+507 6XXX-XXXX</p>
+                        <p>Consultas rápidas y urgentes</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📅</div>
+                        <h4>Videollamada</h4>
+                        <p>Agenda tu reunión</p>
+                        <p>Consulta estratégica gratuita de 30 min</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Express Creative. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#" onclick="showPage('home')">Inicio</a></li>
+                <li><a href="#" onclick="showPage('services')">Servicios</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contacto</a></li>
+                <li><a href="#" onclick="showPage('calculator')">Calculadora</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
