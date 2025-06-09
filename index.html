@@ -145,9 +145,128 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="container">
+            <section class="hero">
+                <h1>🎯 Servicios Especializados</h1>
+                <p>Soluciones a medida para cada tipo de creador</p>
+            </section>
 
+            <div class="specialized-services">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterServices('all')">Todos</button>
+                    <button class="filter-btn" onclick="filterServices('content')">Contenido</button>
+                    <button class="filter-btn" onclick="filterServices('tech')">Técnico</button>
+                    <button class="filter-btn" onclick="filterServices('marketing')">Marketing</button>
+                    <button class="filter-btn" onclick="filterServices('branding')">Branding</button>
+                    <button class="filter-btn" onclick="filterServices('audiovisual')">Audiovisual</button>
+                    <button class="filter-btn" onclick="filterServices('management')">Management</button>
+                    <button class="filter-btn" onclick="filterServices('premium')">Premium</button>
+                </div>
+                <div class="specialized-grid" id="specializedGrid">
+                    <!-- Content Services -->
+                    <div class="specialized-card" data-category="content">
+                        <h4>📝 Copywriting Viral</h4>
+                        <div class="price">$199</div>
+                        <p>Textos que convierten con psicología persuasiva</p>
+                    </div>
+                    <div class="specialized-card" data-category="content">
+                        <h4>🎬 Reels Cinematográficos</h4>
+                        <div class="price">$299</div>
+                        <p>Reels con calidad de Netflix</p>
+                    </div>
+                    <div class="specialized-card" data-category="content">
+                        <h4>📚 Storytelling Épico</h4>
+                        <div class="price">$399</div>
+                        <p>Narrativas que enganchan y venden</p>
+                    </div>
+                    <!-- Branding Services -->
+                    <div class="specialized-card" data-category="branding">
+                        <h4>🎨 Diseño de Marca</h4>
+                        <div class="price">$499</div>
+                        <p>Planificación estratégica para posicionar tu marca en el mercado</p>
+                    </div>
+                    <!-- Audiovisual Services -->
+                    <div class="specialized-card" data-category="audiovisual">
+                        <h4>📸 Fotografía Profesional</h4>
+                        <div class="price">$399</div>
+                        <p>Sesiones fotográficas para redes sociales y branding personal</p>
+                    </div>
+                    <div class="specialized-card" data-category="audiovisual">
+                        <h4>🎥 Producción de Video</h4>
+                        <div class="price">$799</div>
+                        <p>Videos promocionales y de marca con edición profesional</p>
+                    </div>
+                    <div class="specialized-card" data-category="audiovisual">
+                        <h4>🎙️ Podcasting Profesional</h4>
+                        <div class="price">$599</div>
+                        <p>Producción y edición de episodios de podcast con calidad de estudio</p>
+                    </div>
+                    <!-- Social Media Management Services -->
+                    <div class="specialized-card" data-category="management">
+                        <h4>📅 Planificación de Contenido</h4>
+                        <div class="price">$299</div>
+                        <p>Calendario de publicaciones y estrategias de contenido mensual</p>
+                    </div>
+                    <div class="specialized-card" data-category="management">
+                        <h4>📊 Gestión de Redes Sociales</h4>
+                        <div class="price">$399</div>
+                        <p>Planificación y publicación de contenido en múltiples plataformas</p>
+                    </div>
+                    <!-- Tech Services -->
+                    <div class="specialized-card" data-category="tech">
+                        <h4>🤖 Automatización IA</h4>
+                        <div class="price">$499</div>
+                        <p>Implementación de herramientas de IA para optimizar tu flujo de trabajo</p>
+                    </div>
+                    <div class="specialized-card" data-category="tech">
+                        <h4>🌐 Desarrollo Web Personalizado</h4>
+                        <div class="price">$999</div>
+                        <p>Sitios web optimizados para creadores con integración de redes sociales</p>
+                    </div>
+                    <!-- Marketing Services -->
+                    <div class="specialized-card" data-category="marketing">
+                        <h4>📈 Estrategia de Crecimiento</h4>
+                        <div class="price">$599</div>
+                        <p>Planificación estratégica para escalar tu presencia digital</p>
+                    </div>
+                    <div class="specialized-card" data-category="marketing">
+                        <h4>📊 Análisis de Métricas</h4>
+                        <div class="price">$399</div>
+                        <p>Reportes detallados y recomendaciones personalizadas</p>
+                    </div>
+                    <div class="specialized-card" data-category="marketing">
+                        <h4>📣 Campañas Publicitarias</h4>
+                        <div class="price">$799</div>
+                        <p>Gestión de campañas en redes sociales con ROI garantizado</p>
+                    </div>
+                    <!-- Premium Services -->
+                    <div class="specialized-card" data-category="premium">
+                        <h4>🚀 Consultoría Premium</h4>
+                        <div class="price">$1,499</div>
+                        <p>Sesiones estratégicas con expertos de la industria</p>
+                    </div>
+                    <div class="specialized-card" data-category="premium">
+                        <h4>🎥 Producción Audiovisual Avanzada</h4>
+                        <div class="price">$2,499</div>
+                        <p>Producciones de video de alta calidad con edición profesional</p>
+                    </div>
+                    <div class="specialized-card" data-category="premium">
+                        <h4>🌟 Branding Completo</h4>
+                        <div class="price">$1,999</div>
+                        <p>Desarrollo de identidad de marca integral con manual de uso</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+            <div class="cta-section">
+                <h2>¿Listo para llevar tu contenido al siguiente nivel?</h2>
+                <p>Contáctanos para una consulta gratuita y descubre cómo podemos ayudarte a crecer</p>
+                <a href="#" class="cta-button" onclick="showPage('contact')">Solicitar Consulta Gratuita</a>
+            </div>
+        </div>
+                       
+    </div>
     <!-- STREAMING PAGE -->
     <div id="streaming" class="page">
         <div class="container">
@@ -197,7 +316,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="live-stream-demo">
                 <h3>🎮 Plataformas que Manejamos</h3>
                 <div class="services-grid">
@@ -212,11 +330,6 @@
                     </div>
                     
                     <div class="service-card">
-                        <h4>🎵 TikTok Live</h4>
-                        <p>Aprovecha el algoritmo de TikTok para lives virales con contenido trending y dinámicas juveniles.</p>
-                    </div>
-                    
-                    <div class="service-card">
                         <h4>🟣 Twitch</h4>
                         <p>Construcción de comunidad en Twitch, monetización efectiva y crecimiento sostenido de subscribers.</p>
                     </div>
@@ -224,41 +337,38 @@
             </div>
         </div>
     </div>
-
     <!-- CALCULATOR PAGE -->
-<div id="calculator" class="page">
-  <div class="container">
-    <section class="hero">
-      <h1>Calculadora de Métricas Publicitarias</h1>
-      <p>Si ejecutas campañas en diferentes plataformas, evalúa cada una por separado.</p>
-    </section>
+    <div id="calculator" class="page">
+        <div class="container">
+            <section class="hero">
+            <h1>Calculadora de Métricas Publicitarias</h1>
+            <p>Si ejecutas campañas en diferentes plataformas, evalúa cada una por separado.</p>
+            </section>
 
-    <div class="calculator">
-      <h3>Calculadora de Métricas Publicitarias</h3>
-      <div class="calc-form">
-        <label for="total-cost"><strong>Coste total (USD):</strong></label>
-        <input type="number" id="total-cost" class="calc-input" placeholder="Ej. 150.00" step="0.01">
+            <div class="calculator">
+            <h3>Calculadora de Métricas Publicitarias</h3>
+            <div class="calc-form">
+                <label for="total-cost"><strong>Coste total (USD):</strong></label>
+                <input type="number" id="total-cost" class="calc-input" placeholder="Ej. 150.00" step="0.01">
 
-        <label for="impressions"><strong>Impresiones:</strong></label>
-        <input type="number" id="impressions" class="calc-input" placeholder="Ej. 25000">
+                <label for="impressions"><strong>Impresiones:</strong></label>
+                <input type="number" id="impressions" class="calc-input" placeholder="Ej. 25000">
 
-        <label for="clicks"><strong>Clics:</strong></label>
-        <input type="number" id="clicks" class="calc-input" placeholder="Ej. 320">
+                <label for="clicks"><strong>Clics:</strong></label>
+                <input type="number" id="clicks" class="calc-input" placeholder="Ej. 320">
 
-        <label for="conversions"><strong>Conversiones/Acciones:</strong></label>
-        <input type="number" id="conversions" class="calc-input" placeholder="Ej. 25">
+                <label for="conversions"><strong>Conversiones/Acciones:</strong></label>
+                <input type="number" id="conversions" class="calc-input" placeholder="Ej. 25">
 
-        <label for="revenue"><strong>Ingresos/Ganancias (USD):</strong></label>
-        <input type="number" id="revenue" class="calc-input" placeholder="Ej. 1200.00" step="0.01">
+                <label for="revenue"><strong>Ingresos/Ganancias (USD):</strong></label>
+                <input type="number" id="revenue" class="calc-input" placeholder="Ej. 1200.00" step="0.01">
 
-        <button class="calc-button" onclick="calculateAdMetrics()">Calcular métricas</button>
-      </div>
-      <div id="ad-metrics-result" class="calc-results"></div>
-    </div>
-  </div>
-</div>
-
-
+                <button class="calc-button" onclick="calculateAdMetrics()">Calcular métricas</button>
+            </div>
+            <div id="ad-metrics-result" class="calc-results"></div>
+            </div>
+        </div>
+        </div>
     <!-- PRICING PAGE -->
     <div id="pricing" class="page">
         <div class="container">
@@ -337,7 +447,6 @@
             </div>
         </div>
     </div>
-
     <!-- CONTACT PAGE -->
     <div id="contact" class="page">
         <div class="container">

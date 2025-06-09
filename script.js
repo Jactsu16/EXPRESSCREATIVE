@@ -252,3 +252,195 @@
                 });
             });
         });
+        // New add for filtering services
+        
+        // Función principal para filtrar servicios
+function filterServices(category) {
+    const cards = document.querySelectorAll('.specialized-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Remover clase active de todos los botones
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // Agregar clase active al botón clickeado
+    event.target.classList.add('active');
+    
+    // Filtrar las tarjetas
+    cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'block';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            // Animación de entrada
+            setTimeout(() => {
+                card.style.transition = 'all 0.3s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 50);
+        } else {
+            card.style.transition = 'all 0.3s ease';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(-20px)';
+            
+            // Ocultar después de la animación
+            setTimeout(() => {
+                card.style.display = 'none';
+            }, 300);
+        }
+    });
+}
+
+// Función para inicializar la sección cuando se carga la página
+function initializeSpecializedServices() {
+    // Agregar event listeners a los botones de filtro
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+            filterServices(category);
+        });
+    });
+    
+    // Agregar animación inicial a las tarjetas
+    const cards = document.querySelectorAll('.specialized-card');
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'all 0.5s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 100);
+    });
+    
+    // Agregar efectos hover a las tarjetas
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 8px 24px rgba(0,0,0,0.05)';
+        });
+    });
+}
+
+// Función para contar servicios por categoría
+function getServiceCount(category) {
+    if (category === 'all') {
+        return document.querySelectorAll('.specialized-card').length;
+    }
+    return document.querySelectorAll(`[data-category="${category}"]`).length;
+}
+
+// Función para actualizar contadores en los botones (opcional)
+function updateButtonCounters() {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(button => {
+        const category = button.getAttribute('onclick')?.match(/'([^']+)'/)?.[1] || 'all';
+        const count = getServiceCount(category);
+        
+        // Agregar contador si no existe
+        if (!button.querySelector('.count')) {
+            const countSpan = document.createElement('span');
+            countSpan.className = 'count';
+            countSpan.textContent = ` (${count})`;
+            countSpan.style.fontSize = '0.8em';
+            countSpan.style.opacity = '0.7';
+            button.appendChild(countSpan);
+        }
+    });
+}
+
+// Función para búsqueda en tiempo real (funcionalidad adicional)
+function addSearchFunctionality() {
+    // Crear input de búsqueda si no existe
+    const filterContainer = document.querySelector('.filter-buttons');
+    if (!document.querySelector('.search-input')) {
+        const searchInput = document.createElement('input');
+        searchInput.type = 'text';
+        searchInput.className = 'search-input';
+        searchInput.placeholder = '🔍 Buscar servicios...';
+        searchInput.style.cssText = `
+            padding: 8px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            margin-left: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        `;
+        
+        // Agregar funcionalidad de búsqueda
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const cards = document.querySelectorAll('.specialized-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('h4').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        });
+        
+        filterContainer.appendChild(searchInput);
+    }
+}
+
+// Función para ordenar servicios por precio
+function sortServicesByPrice(ascending = true) {
+    const grid = document.getElementById('specializedGrid');
+    const cards = Array.from(document.querySelectorAll('.specialized-card'));
+    
+    cards.sort((a, b) => {
+        const priceA = parseInt(a.querySelector('.price').textContent.replace(/[^0-9]/g, ''));
+        const priceB = parseInt(b.querySelector('.price').textContent.replace(/[^0-9]/g, ''));
+        
+        return ascending ? priceA - priceB : priceB - priceA;
+    });
+    
+    // Remover todas las tarjetas y agregarlas en orden
+    cards.forEach(card => grid.removeChild(card));
+    cards.forEach(card => grid.appendChild(card));
+}
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    initializeSpecializedServices();
+    updateButtonCounters(); // Descomenta si quieres contadores
+    addSearchFunctionality(); // Descomenta si quieres búsqueda
+});
+
+// Función adicional para responsive (opcional)
+function handleResponsive() {
+    const grid = document.getElementById('specializedGrid');
+    const cards = document.querySelectorAll('.specialized-card');
+    
+    if (window.innerWidth <= 768) {
+        // Comportamiento móvil
+        cards.forEach(card => {
+            card.style.marginBottom = '16px';
+        });
+    } else {
+        // Comportamiento desktop
+        cards.forEach(card => {
+            card.style.marginBottom = '24px';
+        });
+    }
+}
+
+// Agregar listener para resize
+window.addEventListener('resize', handleResponsive);
+
+// Ejecutar una vez al cargar
+handleResponsive();
